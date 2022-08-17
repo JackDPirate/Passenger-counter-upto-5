@@ -1,0 +1,213 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="outer-div">
+        <div class="inner-div">
+            <h1>People entered</h1>
+            <h2 id="counter">0</h2>
+            <button class="button-02" type="button" onclick="increment()">INCREMENT</button>
+            <button class="button-02 one" type="button" onclick="decrement()">DECREMENT</button>
+        </div>
+    </div>
+
+    <!------------------------------------Css-part-------------------------------------->
+
+    <style>
+        .outer-div {
+            background-image: linear-gradient(-250deg, #84fab0 27%, #8fd3f4 100%);
+            /* text-transform: uppercase; */
+            /* background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%); */
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            /* color: #fff; */
+            background-clip: text;
+            text-fill-color: transparent;
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
+            animation: textclip 8s linear infinite;
+            /* display: inline-block; */
+            /* background-size: cover; */
+        }
+
+
+        .inner-div {
+            max-width: 1030px;
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+            padding-top: 250px;
+            padding-bottom: 250px;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h2{
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #c75178 67%,
+                    #d1cc42 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 4s linear infinite;
+            font-size: 80px;
+           }
+
+
+        h1 {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 4s linear infinite;
+            display: inline-block;
+            font-size: 80px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .button-02 {
+            padding: 0.6em 2em;
+            border: none;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background: #fff;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            margin: 20px;
+        }
+
+        .button-02:before {
+            content: "";
+            background: linear-gradient(45deg,
+                    #FF0000,
+                    #FF7300,
+                    #FFFB00,
+                    #48FF00,
+                    #00FFD5,
+                    #002BFF,
+                    #7A00FF,
+                    #FF00C8,
+                    #FF0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-02:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-02 .one {
+            margin-right: 20px;
+        }
+
+        .button-02:hover::after {
+            background: #000;
+            color: #fff;
+        }
+
+        .button-02:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+
+
+
+    <!-------------------------js------------------------------------>
+    <script>
+        let num = 0;
+        function increment() { //creating funtion for increment
+            if (num <= 4) {
+                num += 1; //increment by 1
+                document.getElementById("counter").innerHTML = num;
+            }
+        }
+        function decrement() { //creating function for decrement
+            if (num > 0) {
+                num -= 1; //decrement by 1
+                document.getElementById("counter").innerHTML = num;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
